@@ -1,6 +1,5 @@
 // ===== SCANNER MODULE =====
-const BASE_URL = '';
-
+const BASE_URL = 'https://phishing-detection-project-1-ysuh.onrender.com';
 export async function scanUrl(url, username) {
     const response = await fetch(`${BASE_URL}/predict`, {
         method: 'POST',
