@@ -1,5 +1,5 @@
 // ===== AUTH MODULE =====
-const API_BASE = '';
+const API_BASE = "https://phishing-detection-project-kld5.onrender.com";
 
 let currentUser = null;
 
