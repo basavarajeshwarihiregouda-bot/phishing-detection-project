@@ -109,10 +109,12 @@ def check_rules(url):
 # ROUTES
 # =========================
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def home():
-    return "Backend Live v2"
-
+    return jsonify({
+        "status": "success",
+        "message": "Backend Live"
+    })
 @app.route("/login", methods=["POST"])
 def login():
     req = request.get_json()
