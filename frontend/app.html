@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="PhishGuard - AI-Powered Phishing URL Detection with real-time scanning and analytics dashboard">
+    <title>PhishGuard — Phishing URL Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+
+<body>
+    <div id="app">
+        <!-- LOGIN PAGE -->
+        <div id="page-login" class="page active">
+            <div class="login-bg">
+                <div class="login-glow glow-1"></div>
+                <div class="login-glow glow-2"></div>
+                <div class="login-glow glow-3"></div>
+            </div>
+            <div class="login-container">
+                <div class="login-card glass-card">
+                    <div class="login-logo">
+                        <div class="shield-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#logo-grad)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <defs>
+                                    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#6366f1" />
+                                        <stop offset="100%" style="stop-color:#06b6d4" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <h1>PhishGuard</h1>
+                        <p class="login-subtitle">AI-Powered Phishing Detection</p>
+                    </div>
+
+                    <!-- Role Tabs -->
+                    <div class="auth-tabs" id="auth-tabs">
+                        <button class="auth-tab active" data-role="user">User Login</button>
+                        <button class="auth-tab" data-role="admin">Admin Login</button>
+                    </div>
+
+                    <div id="login-error" class="error-message hidden"></div>
+
+                    <!-- Login Form -->
+                    <form id="login-form" autocomplete="off">
+                        <div class="input-group">
+                            <label for="login-username" id="login-id-label">Username</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
+                                <input type="text" id="login-username" placeholder="Enter username" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="login-password">Password</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                                <input type="password" id="login-password" placeholder="Enter password" required>
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: -10px; margin-bottom: 20px;">
+                            <a href="#" id="forgot-pass-link" style="font-size: 0.8rem; color: var(--accent-indigo); text-decoration: none;">Forgot Password?</a>
+                        </div>
+                        <button type="submit" id="login-btn" class="btn-primary">
+                            <span id="login-btn-text">Sign In</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </form>
+
+                    <!-- Signup Form -->
+                    <form id="signup-form" class="hidden" autocomplete="off">
+                        <div class="input-group">
+                            <label>Username</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">👤</span>
+                                <input type="text" id="signup-username" placeholder="Choose username" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">✉️</span>
+                                <input type="email" id="signup-email" placeholder="Enter email" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Password</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🔒</span>
+                                <input type="password" id="signup-password" placeholder="Min 6 chars + special" required>
+                            </div>
+                        </div>
+                        <button type="submit" id="signup-btn" class="btn-primary">
+                            <span>Create Account</span>
+                        </button>
+                    </form>
+
+                    <!-- Forgot Password Form -->
+                    <form id="forgot-form" class="hidden" autocomplete="off">
+                        <div class="input-group">
+                            <label>Username</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">👤</span>
+                                <input type="text" id="forgot-username" placeholder="Enter username" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>New Password</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🔑</span>
+                                <input type="password" id="forgot-password" placeholder="Enter new password" required>
+                            </div>
+                        </div>
+                        <button type="submit" id="reset-btn" class="btn-primary">
+                            <span>Reset Password</span>
+                        </button>
+                    </form>
+
+                    <div class="login-footer">
+                        <p id="footer-main-text">Protected by advanced AI security</p>
+                        <p style="margin-top: 12px; font-size: 0.85rem;">
+                            <span id="toggle-text">Don't have an account?</span>
+                            <a href="#" id="toggle-mode-btn"
+                                style="color: var(--accent-indigo); text-decoration: none; font-weight: 600;">Sign
+                                Up</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCANNER PAGE (USER) -->
+        <div id="page-scanner" class="page">
+            <nav class="navbar glass-nav">
+                <div class="nav-brand">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#nav-grad)" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <defs>
+                            <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6366f1" />
+                                <stop offset="100%" style="stop-color:#06b6d4" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    <span>PhishGuard</span>
+                </div>
+                <div class="user-tabs glass-card nav-user-tabs">
+                    <button class="user-tab active" data-panel="panel-scan">Scan</button>
+                    <button class="user-tab" data-panel="panel-performance">Performance</button>
+                    <button class="user-tab" data-panel="panel-charts">Charts</button>
+                    <button class="user-tab" data-panel="panel-profile">Profile</button>
+                </div>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="btn-icon" title="Toggle Theme">🌓</button>
+                    <span id="nav-user-label" class="nav-role-badge">USER</span>
+                    <button id="logout-btn-scanner" class="btn-ghost" title="Logout">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </nav>
+            <main class="scanner-main">
+                <div class="scanner-hero">
+                    <h1 class="hero-title">Scan Any URL for <span class="gradient-text">Phishing Threats</span></h1>
+                    <p class="hero-subtitle">Powered by machine learning to detect malicious URLs in real-time</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 600px; margin: 15px auto 0;">The user dashboard enhances usability by providing history tracking and search urls, confidence visualization, and explainable results for better decision-making.</p>
+                </div>
+
+                <div id="panel-scan" class="user-panel active">
+                    <div class="scanner-box glass-card">
+                        <div class="scan-input-group">
+                            <div class="scan-input-wrapper">
+                                <svg class="scan-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                </svg>
+                                <input type="url" id="url-input"
+                                    placeholder="Enter a URL to scan (e.g., https://example.com)" autocomplete="off">
+                            </div>
+                            <button id="scan-btn" class="btn-scan">
+                                <span class="scan-btn-text">Scan URL</span>
+                                <div class="spinner hidden" id="scan-spinner"></div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result Card -->
+                    <div id="result-card" class="result-card glass-card hidden">
+                        <div id="result-icon" class="result-icon"></div>
+                        <div class="result-content">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap;">
+                                <div>
+                                    <h2 id="result-title"></h2>
+                                    <p id="result-url" class="result-url"></p>
+                                </div>
+                                <div style="display: flex; gap: 10px; align-items: center;">
+                                    <button id="visit-site-btn" class="btn-primary" style="display: none; padding: 6px 16px; font-size: 0.85rem;">Visit Site</button>
+                                    <button id="bookmark-btn" class="btn-icon" title="Save URL">⭐</button>
+                                </div>
+                            </div>
+                            <div class="result-meta">
+                                <span id="risk-badge" class="risk-badge risk-low">Low Risk</span>
+                                <span id="confidence-text" class="confidence-text">Confidence: 0%</span>
+                            </div>
+                            <p id="result-reason" class="result-reason"></p>
+                            
+                            <div id="result-probability" class="result-probability">
+                                <div class="prob-bar-bg">
+                                    <div id="prob-bar" class="prob-bar"></div>
+                                </div>
+                                <span id="prob-text"></span>
+                            </div>
+                            <div id="explain-panel" class="explain-panel glass-card">
+                                <h3>Explainability</h3>
+                                <ul id="explain-list" class="explain-list"></ul>
+                            </div>
+
+                            <!-- Analysis Breakdown -->
+                            <div id="analysis-breakdown" class="analysis-breakdown">
+                                <div class="analysis-item">
+                                    <div class="item-label">Domain</div>
+                                    <div class="item-value" id="breakdown-domain">-</div>
+                                </div>
+                                <div class="analysis-item">
+                                    <div class="item-label">Length</div>
+                                    <div class="item-value" id="breakdown-length">-</div>
+                                </div>
+                                <div class="analysis-item">
+                                    <div class="item-label">Security</div>
+                                    <div class="item-value" id="breakdown-https">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Favorites Section -->
+                    <div id="favorites-section" class="history-section hidden" style="margin-bottom: 40px;">
+                        <h2 class="section-title">
+                            <span style="color: #fbbf24;">⭐</span> Saved URLs
+                        </h2>
+                        <div class="history-table-wrapper glass-card">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Result</th>
+                                        <th>Reason</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="favorites-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- History Section -->
+                    <div id="history-section" class="history-section hidden">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h2 class="section-title" style="margin-bottom: 0;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                                Scan History
+                            </h2>
+                            <input type="text" id="user-search" class="search-input" placeholder="Search URLs..." style="max-width: 250px;">
+                        </div>
+                        <div class="history-table-wrapper glass-card">
+                            <table id="history-table">
+                                <thead>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Result</th>
+                                        <th>Risk</th>
+                                        <th>Confidence</th>
+                                        <th>Details</th>
+                                        <th>Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="history-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel-performance" class="user-panel hidden">
+                    <div class="overview-grid analytics-grid">
+                        <div class="stat-card glass-card analytics-card">
+                            <span>Accuracy</span>
+                            <strong id="user-perf-accuracy">0%</strong>
+                        </div>
+                        <div class="stat-card glass-card analytics-card">
+                            <span>Precision</span>
+                            <strong id="user-perf-precision">0%</strong>
+                        </div>
+                        <div class="stat-card glass-card analytics-card">
+                            <span>Recall</span>
+                            <strong id="user-perf-recall">0%</strong>
+                        </div>
+                        <div class="stat-card glass-card analytics-card">
+                            <span>F1 Score</span>
+                            <strong id="user-perf-f1">0%</strong>
+                        </div>
+                    </div>
+
+                    <div class="performance-grid">
+                        <div class="metric-card glass-card">
+                            <h3>Confusion Matrix</h3>
+                            <div class="confusion-grid performance-matrix">
+                                <div class="confusion-cell tp">
+                                    <span>True Positives</span>
+                                    <strong id="user-confusion-tp">0</strong>
+                                </div>
+                                <div class="confusion-cell fp">
+                                    <span>False Positives</span>
+                                    <strong id="user-confusion-fp">0</strong>
+                                </div>
+                                <div class="confusion-cell tn">
+                                    <span>True Negatives</span>
+                                    <strong id="user-confusion-tn">0</strong>
+                                </div>
+                                <div class="confusion-cell fn">
+                                    <span>False Negatives</span>
+                                    <strong id="user-confusion-fn">0</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metric-card glass-card">
+                            <h3>Risk Breakdown</h3>
+                            <div class="risk-breakdown">
+                                <div>
+                                    <span>High Risk</span>
+                                    <strong id="risk-high-count">0</strong>
+                                </div>
+                                <div>
+                                    <span>Medium Risk</span>
+                                    <strong id="risk-medium-count">0</strong>
+                                </div>
+                                <div>
+                                    <span>Low Risk</span>
+                                    <strong id="risk-low-count">0</strong>
+                                </div>
+                            </div>
+                            <h3>Explainability Summary</h3>
+                            <ul id="user-explain-summary" class="explain-list"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel-charts" class="user-panel hidden">
+                    <div class="charts-grid">
+                        <div class="chart-card glass-card">
+                            <h2 class="card-title">Feature Importance</h2>
+                            <div class="chart-container"><canvas id="user-feature-chart"></canvas></div>
+                        </div>
+                        <div class="chart-card glass-card">
+                            <h2 class="card-title">Phishing vs Legitimate</h2>
+                            <div class="chart-container"><canvas id="user-distribution-chart"></canvas></div>
+                        </div>
+                    </div>
+                    <div class="charts-grid">
+                        <div class="chart-card glass-card">
+                            <h2 class="card-title">Risk Level Distribution</h2>
+                            <div class="chart-container"><canvas id="user-risk-chart"></canvas></div>
+                        </div>
+                        <div class="chart-card glass-card">
+                            <h2 class="card-title">Metric Trend</h2>
+                            <div class="chart-container"><canvas id="user-metric-trend-chart"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel-profile" class="user-panel hidden">
+                    <div class="profile-grid">
+                        <div class="stat-card glass-card profile-card">
+                            <span>Total URLs Scanned</span>
+                            <strong id="profile-total">0</strong>
+                        </div>
+                        <div class="stat-card glass-card profile-card">
+                            <span>Phishing Detected</span>
+                            <strong id="profile-phishing">0</strong>
+                        </div>
+                        <div class="stat-card glass-card profile-card">
+                            <span>Legitimate URLs</span>
+                            <strong id="profile-legit">0</strong>
+                        </div>
+                        <div class="stat-card glass-card profile-card">
+                            <span>Success Rate</span>
+                            <strong id="profile-success-rate">0%</strong>
+                        </div>
+                    </div>
+                    <div class="metric-card glass-card">
+                        <h3>Scan Activity Summary</h3>
+                        <p id="profile-summary-text">Live scan activity and risk trends will appear here as you use the scanner.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- ADMIN DASHBOARD -->
+        <div id="page-admin" class="page">
+            <nav class="navbar glass-nav">
+                <div class="nav-brand">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#nav-grad2)"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <defs>
+                            <linearGradient id="nav-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6366f1" />
+                                <stop offset="100%" style="stop-color:#06b6d4" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    <span>PhishGuard Admin</span>
+                </div>
+                <div class="nav-actions">
+                    <span class="nav-role-badge admin-badge">ADMIN</span>
+                    <button id="logout-btn-admin" class="btn-ghost" title="Logout">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </nav>
+            <main class="admin-main">
+                <div class="admin-tabs" id="admin-tabs">
+                    <button class="admin-tab active" data-panel="panel-overview">Overview</button>
+                    <button class="admin-tab" data-panel="panel-performance">Performance</button>
+                    <button class="admin-tab" data-panel="panel-confusion">Confusion Matrix</button>
+                    <button class="admin-tab" data-panel="panel-charts">Charts</button>
+                    <button class="admin-tab" data-panel="panel-features">Feature Importance</button>
+                    <button class="admin-tab" data-panel="panel-history">Full History</button>
+                    <button class="admin-tab" data-panel="panel-phishing">Phishing Log</button>
+                    <button class="admin-tab" data-panel="panel-rules">URL Rules</button>
+                    <button class="admin-tab" data-panel="panel-model">Model Settings</button>
+                </div>
+
+                <!-- PANEL: OVERVIEW -->
+                <div id="panel-overview" class="admin-panel active">
+                    <div class="overview-grid">
+                        <div class="stat-card glass-card overview-card">
+                            <div class="stat-icon-bg">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="stat-label">Total Scans</span>
+                                <span id="dashboard-total" class="stat-value">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-card overview-card">
+                            <div class="stat-icon-bg legit-bg">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="stat-label">Safe URLs</span>
+                                <span id="dashboard-safe" class="stat-value legit-text">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-card overview-card">
+                            <div class="stat-icon-bg phish-bg">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                                    <line x1="12" y1="9" x2="12" y2="13" />
+                                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="stat-label">Threats Blocked</span>
+                                <span id="dashboard-threats" class="stat-value phish-text">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-card overview-card">
+                            <div class="stat-icon-bg">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="stat-label">Detection Rate</span>
+                                <span id="dashboard-rate" class="stat-value">0%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-card overview-card">
+                            <div class="stat-icon-bg legit-bg">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z" />
+                                    <path d="M8 12h8" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="stat-label">Active Users</span>
+                                <span id="stat-active-users" class="stat-value">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-card overview-card">
+                            <div class="stat-icon-bg phish-bg">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 6h0" />
+                                    <path d="M4 12h16" />
+                                    <path d="M12 18h0" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="stat-label">Average Confidence</span>
+                                <span id="stat-confidence" class="stat-value">0%</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Admin URL Scanner Section -->
+                    <div style="margin-top: 40px;">
+                        <h2 class="card-title" style="margin-bottom: 20px;">Quick URL Scanner</h2>
+                        <div class="scanner-box glass-card">
+                            <div class="scan-input-group">
+                                <div class="scan-input-wrapper">
+                                    <svg class="scan-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                    </svg>
+                                    <input type="url" id="admin-url-input"
+                                        placeholder="Enter a URL to scan (e.g., https://example.com)" autocomplete="off">
+                                </div>
+                                <button id="admin-scan-btn" class="btn-scan">
+                                    <span class="scan-btn-text">Scan URL</span>
+                                    <div class="spinner hidden" id="admin-scan-spinner"></div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Admin Result Card -->
+                        <div id="admin-result-card" class="result-card glass-card hidden" style="margin-top: 20px;">
+                            <div class="result-content">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap;">
+                                    <div>
+                                        <h2 id="admin-result-title"></h2>
+                                        <p id="admin-result-url" class="result-url"></p>
+                                    </div>
+                                    <div style="display: flex; gap: 10px; align-items: center;">
+                                        <button id="admin-visit-site-btn" class="btn-primary" style="display: none; padding: 6px 16px; font-size: 0.85rem;">Visit Site</button>
+                                    </div>
+                                </div>
+                                <div class="result-meta">
+                                    <span id="admin-risk-badge" class="risk-badge risk-low">Low Risk</span>
+                                    <span id="admin-confidence-text" class="confidence-text">Confidence: 0%</span>
+                                </div>
+                                <p id="admin-result-reason" class="result-reason"></p>
+                                
+                                <div id="admin-result-probability" class="result-probability">
+                                    <div class="prob-bar-bg">
+                                        <div id="admin-prob-bar" class="prob-bar"></div>
+                                    </div>
+                                    <span id="admin-prob-text"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scan History Table -->
+                    <div id="admin-scan-history-section" class="history-section hidden" style="margin-top: 40px;">
+                        <h2 class="card-title" style="margin-bottom: 20px;">Recent Scan History</h2>
+                        <div class="history-table-wrapper glass-card">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Result</th>
+                                        <th>Risk</th>
+                                        <th>Confidence</th>
+                                        <th>User</th>
+                                        <th>Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-scan-history-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL: PERFORMANCE -->
+                <div id="panel-performance" class="admin-panel hidden">
+                    <div class="overview-grid analytics-grid">
+                        <div class="perf-card glass-card neon-glow perf-1">
+                            <span>Accuracy</span>
+                            <strong id="admin-perf-accuracy">96.8%</strong>
+                            <div class="card-icon">📊</div>
+                        </div>
+                        <div class="perf-card glass-card neon-glow perf-2">
+                            <span>Precision</span>
+                            <strong id="admin-perf-precision">97.2%</strong>
+                            <div class="card-icon">🎯</div>
+                        </div>
+                        <div class="perf-card glass-card neon-glow perf-3">
+                            <span>Recall</span>
+                            <strong id="admin-perf-recall">96.1%</strong>
+                            <div class="card-icon">🔍</div>
+                        </div>
+                        <div class="perf-card glass-card neon-glow perf-4">
+                            <span>F1 Score</span>
+                            <strong id="admin-perf-f1">96.6%</strong>
+                            <div class="card-icon">✨</div>
+                        </div>
+                    </div>
+
+                    <div class="metrics-grid">
+                        <div class="metric-panel glass-card">
+                            <h2 class="card-title">Model Performance Summary</h2>
+                            <div class="perf-summary">
+                                <div class="summary-item">
+                                    <span>Dataset Size</span>
+                                    <strong>160,000 URLs</strong>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Training Accuracy</span>
+                                    <strong>96.8%</strong>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Validation Accuracy</span>
+                                    <strong>96.5%</strong>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Average Confidence</span>
+                                    <strong id="admin-avg-conf">0%</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="metric-panel glass-card">
+                            <h2 class="card-title">URL Classification</h2>
+                            <div class="classification-breakdown">
+                                <div class="class-item safe-class">
+                                    <span>Safe URLs</span>
+                                    <strong id="admin-safe-urls">0</strong>
+                                </div>
+                                <div class="class-item phish-class">
+                                    <span>Phishing URLs</span>
+                                    <strong id="admin-phish-urls">0</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL: CONFUSION MATRIX -->
+                <div id="panel-confusion" class="admin-panel hidden">
+                    <div class="confusion-container">
+                        <h2 class="card-title">Model Confusion Matrix</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 30px;">Dataset: 160,000 URLs | Model Performance Analysis</p>
+
+                        <div class="confusion-matrix-grid glass-card">
+                            <div style="grid-column: 1; grid-row: 1;"></div>
+                            <div style="grid-column: 2; grid-row: 1; padding: 10px; text-align: center; font-weight: 600;">Predicted Negative</div>
+                            <div style="grid-column: 3; grid-row: 1; padding: 10px; text-align: center; font-weight: 600;">Predicted Positive</div>
+
+                            <div style="grid-column: 1; grid-row: 2; padding: 10px; text-align: center; font-weight: 600;">Actual Negative</div>
+                            <div class="confusion-cell neon-tn">
+                                <div class="cell-label">True Negatives</div>
+                                <div class="cell-value" id="conf-tn">76,400</div>
+                            </div>
+                            <div class="confusion-cell neon-fp">
+                                <div class="cell-label">False Positives</div>
+                                <div class="cell-value" id="conf-fp">2,250</div>
+                            </div>
+
+                            <div style="grid-column: 1; grid-row: 3; padding: 10px; text-align: center; font-weight: 600;">Actual Positive</div>
+                            <div class="confusion-cell neon-fn">
+                                <div class="cell-label">False Negatives</div>
+                                <div class="cell-value" id="conf-fn">4,100</div>
+                            </div>
+                            <div class="confusion-cell neon-tp">
+                                <div class="cell-label">True Positives</div>
+                                <div class="cell-value" id="conf-tp">77,250</div>
+                            </div>
+                        </div>
+
+                        <div class="metrics-grid" style="margin-top: 30px;">
+                            <div class="metric-panel glass-card">
+                                <h3 class="card-title">Derived Metrics</h3>
+                                <div class="derived-metrics">
+                                    <div class="metric-row">
+                                        <span>Sensitivity (TPR)</span>
+                                        <strong id="admin-sensitivity">0%</strong>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Specificity (TNR)</span>
+                                        <strong id="admin-specificity">0%</strong>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>False Positive Rate</span>
+                                        <strong id="admin-fpr">0%</strong>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>False Negative Rate</span>
+                                        <strong id="admin-fnr">0%</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL: CHARTS -->
+                <div id="panel-charts" class="admin-panel hidden">
+                    <div class="charts-grid">
+                        <div class="chart-card glass-card">
+                            <h2 class="card-title">Performance Metrics</h2>
+                            <div class="chart-container"><canvas id="admin-metrics-chart"></canvas></div>
+                        </div>
+                        <div class="chart-card glass-card">
+                            <h2 class="card-title">Prediction Distribution</h2>
+                            <div class="chart-container"><canvas id="admin-dist-chart"></canvas></div>
+                        </div>
+                    </div>
+                    <div class="charts-grid">
+                        <div class="chart-card glass-card">
+                            <h2 class="card-title">Threat Categories</h2>
+                            <div class="chart-container"><canvas id="admin-threat-chart"></canvas></div>
+                        </div>
+                        <div class="chart-card glass-card">
+                            <h2 class="card-title">Scans Over Time</h2>
+                            <div class="chart-container"><canvas id="admin-timeline-chart"></canvas></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- PANEL: FEATURE IMPORTANCE -->
+                <div id="panel-features" class="admin-panel hidden">
+                    <div class="feature-importance-container">
+                        <h2 class="card-title">Feature Importance Analysis</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 30px;">Machine learning model features ranked by importance for phishing detection</p>
+                        
+                        <div class="glass-card feature-list">
+                            <div class="feature-item">
+                                <div class="feature-label">URL Length</div>
+                                <div class="feature-bar-container">
+                                    <div class="feature-bar" style="width: 88%; background: linear-gradient(90deg, #6366f1, #8b5cf6);"></div>
+                                </div>
+                                <div class="feature-value">22%</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-label">HTTPS Presence</div>
+                                <div class="feature-bar-container">
+                                    <div class="feature-bar" style="width: 72%; background: linear-gradient(90deg, #06b6d4, #10b981);"></div>
+                                </div>
+                                <div class="feature-value">18%</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-label">Suspicious Keywords</div>
+                                <div class="feature-bar-container">
+                                    <div class="feature-bar" style="width: 64%; background: linear-gradient(90deg, #f59e0b, #ef4444);"></div>
+                                </div>
+                                <div class="feature-value">16%</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-label">Number of Digits</div>
+                                <div class="feature-bar-container">
+                                    <div class="feature-bar" style="width: 56%; background: linear-gradient(90deg, #8b5cf6, #06b6d4);"></div>
+                                </div>
+                                <div class="feature-value">14%</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-label">Special Characters</div>
+                                <div class="feature-bar-container">
+                                    <div class="feature-bar" style="width: 52%; background: linear-gradient(90deg, #ec4899, #6366f1);"></div>
+                                </div>
+                                <div class="feature-value">13%</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-label">Domain Similarity</div>
+                                <div class="feature-bar-container">
+                                    <div class="feature-bar" style="width: 40%; background: linear-gradient(90deg, #06b6d4, #8b5cf6);"></div>
+                                </div>
+                                <div class="feature-value">10%</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-label">Subdomain Count</div>
+                                <div class="feature-bar-container">
+                                    <div class="feature-bar" style="width: 28%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+                                </div>
+                                <div class="feature-value">7%</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-label">URL Entropy</div>
+                                <div class="feature-bar-container">
+                                    <div class="feature-bar" style="width: 24%; background: linear-gradient(90deg, #6366f1, #06b6d4);"></div>
+                                </div>
+                                <div class="feature-value">6%</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-label">Redirect Count</div>
+                                <div class="feature-bar-container">
+                                    <div class="feature-bar" style="width: 20%; background: linear-gradient(90deg, #8b5cf6, #ec4899);"></div>
+                                </div>
+                                <div class="feature-value">5%</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-label">IP Address Usage</div>
+                                <div class="feature-bar-container">
+                                    <div class="feature-bar" style="width: 16%; background: linear-gradient(90deg, #f59e0b, #ef4444);"></div>
+                                </div>
+                                <div class="feature-value">4%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL: HISTORY -->
+                <div id="panel-history" class="admin-panel">
+                    <div class="table-card glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h2 class="card-title">Full Scan History</h2>
+                            <input type="text" id="admin-search" class="search-input" placeholder="Search URL or user...">
+                        </div>
+                        <div class="admin-table-wrapper">
+                            <table id="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Result</th>
+                                        <th>User</th>
+                                        <th>Time</th>
+                                        <th>Risk</th>
+                                        <th>Confidence</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-history-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL: PHISHING -->
+                <div id="panel-phishing" class="admin-panel">
+                    <div class="table-card glass-card">
+                        <h2 class="card-title">Detected Phishing Log</h2>
+                        <div class="admin-table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Reason</th>
+                                        <th>Probability</th>
+                                        <th>Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-phishing-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL: MODEL -->
+                <div id="panel-model" class="admin-panel">
+                    <div class="stats-grid">
+                        <div class="stat-card glass-card">
+                            <div class="stat-info">
+                                <h2 class="card-title">Dataset Upload</h2>
+                                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;">Add new phishing/legitimate data.</p>
+                                <input type="file" id="dataset-upload" style="margin-bottom: 15px; font-size: 0.8rem;">
+                                <button id="upload-btn" class="btn-primary" style="padding: 10px;">Upload Dataset</button>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-card" style="grid-column: span 2;">
+                            <div class="stat-info" style="width: 100%;">
+                                <h2 class="card-title">Model Retraining</h2>
+                                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;">Update AI weights with new data.</p>
+                                <div id="retrain-status" style="margin-bottom: 10px; font-weight: 600; color: var(--accent-indigo);">System Ready</div>
+                                <button id="retrain-btn" class="btn-primary">Start Retraining</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL: URL RULES -->
+                <div id="panel-rules" class="admin-panel hidden">
+                    <div class="rules-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <!-- Blacklist Section -->
+                        <div class="rule-section glass-card">
+                            <h2 class="card-title" style="color: #ef4444; display: flex; align-items: center; gap: 10px;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                Blacklist
+                            </h2>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Force block phishing URLs & domains.</p>
+                            
+                            <form id="form-blacklist" class="rule-form scan-input-group" style="margin-bottom: 20px;">
+                                <div class="scan-input-wrapper">
+                                    <input type="text" id="input-blacklist" placeholder="Enter URL or domain (e.g. badsite.com)" required>
+                                </div>
+                                <button type="submit" class="btn-scan" style="background: linear-gradient(90deg, #ef4444, #b91c1c);">Add</button>
+                            </form>
+                            
+                            <input type="text" id="search-blacklist" class="search-input" placeholder="Search blacklist..." style="width: 100%; margin-bottom: 15px;">
+                            
+                            <div class="admin-table-wrapper" style="max-height: 400px; overflow-y: auto;">
+                                <table>
+                                    <thead><tr><th>URL</th><th>Added</th><th>Action</th></tr></thead>
+                                    <tbody id="body-blacklist"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Whitelist Section -->
+                        <div class="rule-section glass-card">
+                            <h2 class="card-title" style="color: #10b981; display: flex; align-items: center; gap: 10px;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                Whitelist
+                            </h2>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Force allow legitimate URLs & domains.</p>
+                            
+                            <form id="form-whitelist" class="rule-form scan-input-group" style="margin-bottom: 20px;">
+                                <div class="scan-input-wrapper">
+                                    <input type="text" id="input-whitelist" placeholder="Enter URL or domain (e.g. google.com)" required>
+                                </div>
+                                <button type="submit" class="btn-scan" style="background: linear-gradient(90deg, #10b981, #059669);">Add</button>
+                            </form>
+                            
+                            <input type="text" id="search-whitelist" class="search-input" placeholder="Search whitelist..." style="width: 100%; margin-bottom: 15px;">
+                            
+                            <div class="admin-table-wrapper" style="max-height: 400px; overflow-y: auto;">
+                                <table>
+                                    <thead><tr><th>URL</th><th>Added</th><th>Action</th></tr></thead>
+                                    <tbody id="body-whitelist"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Warning Modal -->
+    <div id="visit-warning-modal" class="modal hidden" style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="glass-card" style="max-width: 450px; text-align: center; border: 1px solid #ef4444; box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);">
+            <div style="color: #ef4444; margin-bottom: 15px; display: flex; justify-content: center;">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </div>
+            <h2 style="color: #fff; margin-bottom: 10px;">Security Warning</h2>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">This website is detected as potentially unsafe and may steal your credentials or personal information.</p>
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <button id="btn-cancel-visit" class="btn-ghost">Cancel</button>
+                <button id="btn-continue-visit" class="btn-scan" style="background: linear-gradient(90deg, #ef4444, #b91c1c);">Continue Anyway</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Chatbot Button -->
+    <button id="chatbot-fab" class="chatbot-fab hidden" title="Phishing Awareness Chatbot">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+    </button>
+
+    <!-- Chatbot Window -->
+    <div id="chatbot-window" class="chatbot-window glass-card hidden">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <span class="chatbot-icon">🤖</span> PhishGuard Assistant
+            </div>
+            <button id="chatbot-close" class="btn-ghost" style="padding: 4px 8px;">✕</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages">
+            <div class="chat-msg bot-msg">
+                <div class="msg-content">Hello! I'm your PhishGuard Assistant. I can help you understand phishing, how to identify it, and general cybersecurity best practices.</div>
+                <div class="msg-time">Just now</div>
+            </div>
+        </div>
+        <div class="chatbot-suggestions">
+            <button class="faq-chip">What is phishing?</button>
+            <button class="faq-chip">How to identify phishing websites?</button>
+            <button class="faq-chip">Is HTTPS always safe?</button>
+            <button class="faq-chip">What is domain spoofing?</button>
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbot-input" placeholder="Ask a cybersecurity question..." autocomplete="off">
+            <button id="chatbot-send" class="btn-primary" style="padding: 8px 12px; width: auto;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="app.js?v=6"></script>
+</body>
+
+</html>

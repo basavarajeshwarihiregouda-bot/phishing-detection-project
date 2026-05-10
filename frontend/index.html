@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard - Advanced AI Phishing Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body class="dark-mode landing-page">
+
+    <!-- Navbar -->
+    <nav class="navbar glass-nav landing-nav">
+        <div class="nav-brand">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#nav-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#6366f1" />
+                        <stop offset="100%" style="stop-color:#06b6d4" />
+                    </linearGradient>
+                </defs>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <span>PhishGuard</span>
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#stats">Impact</a>
+        </div>
+        <div class="nav-actions">
+            <a href="app.html" class="btn-ghost">Log In</a>
+            <a href="app.html#signup" class="btn-primary" style="text-decoration: none;">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Slider Section -->
+    <header class="hero-slider-container">
+        <div class="slider-wrapper" id="slider-wrapper">
+            
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-bg glow-bg-1"></div>
+                <div class="slide-content">
+                    <span class="slide-badge">Next-Gen Security</span>
+                    <h1 class="slide-title">Stop Phishing Attacks <br><span class="gradient-text">Before They Start</span></h1>
+                    <p class="slide-desc">PhishGuard uses advanced Machine Learning algorithms to analyze URLs in real-time and block malicious threats with 99.9% accuracy.</p>
+                    <div class="slide-actions">
+                        <a href="app.html#signup" class="btn-primary btn-large">Protect Your Data Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-bg glow-bg-2"></div>
+                <div class="slide-content">
+                    <span class="slide-badge">Real-Time Analysis</span>
+                    <h1 class="slide-title">Instant Threat <br><span class="gradient-text">Detection Dashboard</span></h1>
+                    <p class="slide-desc">Monitor your scans, track historical data, and get explainable AI results that help you understand exactly why a link is dangerous.</p>
+                    <div class="slide-actions">
+                        <a href="#features" class="btn-ghost btn-large">Explore Features</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-bg glow-bg-3"></div>
+                <div class="slide-content">
+                    <span class="slide-badge">Enterprise Ready</span>
+                    <h1 class="slide-title">Uncompromising <br><span class="gradient-text">Cybersecurity Standards</span></h1>
+                    <p class="slide-desc">Designed for both individual users and security administrators. Comprehensive logging, custom rules, and model retraining capabilities.</p>
+                    <div class="slide-actions">
+                        <a href="app.html" class="btn-primary btn-large">Access Admin Panel</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider-btn prev-btn" id="prev-slide" aria-label="Previous slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="slider-btn next-btn" id="next-slide" aria-label="Next slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        
+        <div class="slider-dots" id="slider-dots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+        </div>
+    </header>
+
+    <!-- Trusted By Badges -->
+    <section class="trust-section animate-on-scroll">
+        <p class="trust-title">TRUSTED BY SECURITY PROFESSIONALS GLOBALLY</p>
+        <div class="trust-badges">
+            <div class="badge-item">🔒 SOC2 Certified</div>
+            <div class="badge-item">🛡️ GDPR Compliant</div>
+            <div class="badge-item">⚡ 99.9% Uptime</div>
+            <div class="badge-item">🏆 Cyber Excellence</div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-header animate-on-scroll">
+            <h2 class="section-title">AI-Powered <span class="gradient-text">Protection</span></h2>
+            <p class="section-subtitle">Six distinct advantages that make PhishGuard the ultimate URL verification tool.</p>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card glass-card animate-on-scroll">
+                <div class="feature-icon bg-indigo">🤖</div>
+                <h3>Machine Learning Core</h3>
+                <p>Our proprietary model analyzes URL structures, lexical patterns, and heuristic indicators in milliseconds.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="feature-card glass-card animate-on-scroll" style="transition-delay: 100ms;">
+                <div class="feature-icon bg-cyan">⚡</div>
+                <h3>Zero-Day Detection</h3>
+                <p>We don't rely solely on blocklists. Our AI identifies novel, never-before-seen phishing domains dynamically.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="feature-card glass-card animate-on-scroll" style="transition-delay: 200ms;">
+                <div class="feature-icon bg-purple">📊</div>
+                <h3>Explainable AI</h3>
+                <p>Get clear, transparent breakdowns of why a URL was flagged, including confidence metrics and risk factors.</p>
+            </div>
+            <!-- Feature 4 -->
+            <div class="feature-card glass-card animate-on-scroll" style="transition-delay: 300ms;">
+                <div class="feature-icon bg-green">⏱️</div>
+                <h3>Real-Time History</h3>
+                <p>Access a complete, searchable log of all your previous scans and instantly bookmark suspicious findings.</p>
+            </div>
+            <!-- Feature 5 -->
+            <div class="feature-card glass-card animate-on-scroll" style="transition-delay: 400ms;">
+                <div class="feature-icon bg-red">🛡️</div>
+                <h3>Admin Analytics</h3>
+                <p>Security teams can monitor organizational health, track threats via pie charts, and delete historical records.</p>
+            </div>
+            <!-- Feature 6 -->
+            <div class="feature-card glass-card animate-on-scroll" style="transition-delay: 500ms;">
+                <div class="feature-icon bg-yellow">🔄</div>
+                <h3>Continuous Learning</h3>
+                <p>Admins can upload new datasets and retrain the model directly from the dashboard to adapt to new threats.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="section-header animate-on-scroll">
+            <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+            <p class="section-subtitle">Three simple steps to secure your browsing experience.</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step-card animate-on-scroll">
+                <div class="step-number">1</div>
+                <h3>Enter URL</h3>
+                <p>Paste any suspicious link into our secure scanner interface.</p>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-card animate-on-scroll" style="transition-delay: 200ms;">
+                <div class="step-number">2</div>
+                <h3>AI Analysis</h3>
+                <p>The model evaluates 30+ features including HTTPS state, length, and lexical patterns.</p>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-card animate-on-scroll" style="transition-delay: 400ms;">
+                <div class="step-number">3</div>
+                <h3>Get Verdict</h3>
+                <p>Receive an instant "Phishing" or "Legitimate" result with an explainable breakdown.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section animate-on-scroll">
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h2 class="counter" data-target="250000">0</h2>
+                <p>URLs Scanned</p>
+            </div>
+            <div class="stat-box">
+                <h2 class="counter" data-target="99">0</h2>
+                <p>Accuracy Rate (%)</p>
+            </div>
+            <div class="stat-box">
+                <h2 class="counter" data-target="15000">0</h2>
+                <p>Phishing Attempts Blocked</p>
+            </div>
+            <div class="stat-box">
+                <h2 class="counter" data-target="24">0</h2>
+                <p>Active Enterprise Users</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#nav-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    <span style="font-size: 1.2rem; font-weight: 700; color: white;">PhishGuard</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Protecting digital identities with state-of-the-art machine learning algorithms. Stay safe, stay secure.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="app.html">Sign In</a>
+            </div>
+            <div class="footer-links">
+                <h3>Company</h3>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#">🐦</a>
+                    <a href="#">💼</a>
+                    <a href="#">🐙</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PhishGuard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="landing.js"></script>
+</body>
+</html>

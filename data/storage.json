@@ -1,0 +1,1587 @@
+{
+    "users": {
+        "user": {
+            "password": "user1234",
+            "role": "user",
+            "attempts": 0,
+            "lockout_until": 0
+        },
+        "admin": {
+            "password": "admin123",
+            "role": "admin",
+            "attempts": 0,
+            "lockout_until": 0
+        },
+        "useruser": {
+            "password": "newpass123newpass123",
+            "role": "user",
+            "attempts": 0,
+            "lockout_until": 0
+        },
+        "newuser": {
+            "password": "Pass123!",
+            "email": "test@test.com",
+            "role": "user",
+            "attempts": 0,
+            "lockout_until": 0
+        },
+        "user1": {
+            "password": "user@111",
+            "email": "test@gmail.com",
+            "role": "user",
+            "attempts": 1,
+            "lockout_until": 0
+        },
+        "user2": {
+            "password": "Pass123!Pass123!",
+            "email": "user2@gmail.com",
+            "role": "user",
+            "attempts": 4,
+            "lockout_until": 0
+        },
+        "user3": {
+            "password": "Pass123!",
+            "email": "user2@gmail.com",
+            "role": "user",
+            "attempts": 0,
+            "lockout_until": 0
+        },
+        "user4": {
+            "password": "user@444",
+            "email": "user4@gmail.com",
+            "role": "user",
+            "attempts": 0,
+            "lockout_until": 0
+        },
+        "tester123": {
+            "password": "Pass123!",
+            "email": "tester123@example.com",
+            "role": "user",
+            "attempts": 0,
+            "lockout_until": 0
+        }
+    },
+    "stats": {
+        "total_requests": 100,
+        "phishing": 50,
+        "legitimate": 50,
+        "users": [
+            "extension_user",
+            "newuser",
+            "user4",
+            "guest",
+            "user",
+            "admin",
+            "user1",
+            "tester123"
+        ]
+    },
+    "history": [
+        {
+            "id": "6eb6b33c",
+            "url": "http://192.168.2.2:8090/httpclient.html",
+            "username": "extension_user",
+            "timestamp": 1778419587.2689257,
+            "result": "phishing",
+            "probability": 0.999982764420372,
+            "analysis": {
+                "domain": "192.168.2.2:8090",
+                "length": 39,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "2d42727b",
+            "url": "https://web.whatsapp.com/",
+            "username": "admin",
+            "timestamp": 1778419520.7316086,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "https": true,
+                "is_ip": false,
+                "length": 25,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "9788abbb",
+            "url": "https://go.cloudskillsboost.google/arcade",
+            "username": "extension_user",
+            "timestamp": 1778412539.3218029,
+            "result": "phishing",
+            "probability": 0.9999994550865768,
+            "analysis": {
+                "domain": "go.cloudskillsboost.google",
+                "length": 41,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "8e046288",
+            "url": "https://colab.research.google.com/drive/1qt2WXoJZrorl9lnYZspSCwu_jr2Z8BgF#scrollTo=0j5eiEDdfPmZ",
+            "username": "extension_user",
+            "timestamp": 1778412523.1900346,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "colab.research.google.com",
+                "length": 95,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "072c2437",
+            "url": "https://mail.google.com/mail/u/0/#inbox",
+            "username": "extension_user",
+            "timestamp": 1778412485.7294319,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "mail.google.com",
+                "length": 39,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "3c5128b9",
+            "url": "https://web.whatsapp.com/",
+            "username": "extension_user",
+            "timestamp": 1778412469.6799552,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "https": true,
+                "is_ip": false,
+                "length": 25,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "b1f1c36c",
+            "url": "https://web.whatsapp.com/",
+            "username": "extension_user",
+            "timestamp": 1778412439.0921426,
+            "result": "phishing",
+            "probability": 0.9999784157624163,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "f22a818d",
+            "url": "https://web.whatsapp.com/",
+            "username": "extension_user",
+            "timestamp": 1778412379.354827,
+            "result": "phishing",
+            "probability": 0.9999784157624163,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "a0d874d0",
+            "url": "https://www.zomato.com/",
+            "username": "extension_user",
+            "timestamp": 1778412086.2953193,
+            "result": "phishing",
+            "probability": 0.9999564914499096,
+            "analysis": {
+                "domain": "zomato.com",
+                "length": 23,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "31b25e77",
+            "url": "https://www.zomato.com/",
+            "username": "extension_user",
+            "timestamp": 1778412071.2217116,
+            "result": "phishing",
+            "probability": 0.9999564914499096,
+            "analysis": {
+                "domain": "zomato.com",
+                "length": 23,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "fbb9fcdf",
+            "url": "https://www.kaggle.com/code/fehmifratpolat/customer-behavior-analysis-with-sql",
+            "username": "extension_user",
+            "timestamp": 1778412022.5078967,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "kaggle.com",
+                "length": 78,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "6e0257dd",
+            "url": "https://www.google.com/",
+            "username": "extension_user",
+            "timestamp": 1778411992.5795515,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "google.com",
+                "length": 23,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "f97b0912",
+            "url": "https://www.you1ube.com/",
+            "username": "user",
+            "timestamp": 1778410928.9951801,
+            "result": "phishing",
+            "reason": "typo detected",
+            "analysis": {
+                "domain": "you1ube.com",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "2ffc5558",
+            "url": "https://www.youtube.com/",
+            "username": "user",
+            "timestamp": 1778410916.5693545,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "youtube.com",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "490c4251",
+            "url": "https://www.g0ogle.com/",
+            "username": "user",
+            "timestamp": 1778410858.5052712,
+            "result": "phishing",
+            "probability": 0.9999516962393572,
+            "analysis": {
+                "domain": "g0ogle.com",
+                "length": 23,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "2cff0707",
+            "url": "https://www.google.com/",
+            "username": "user",
+            "timestamp": 1778410846.3486056,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "google.com",
+                "length": 23,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "df7235bc",
+            "url": "https://www.youtubE.com/",
+            "username": "user",
+            "timestamp": 1778410807.542707,
+            "result": "phishing",
+            "reason": "typo detected",
+            "analysis": {
+                "domain": "youtubE.com",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "6aeface0",
+            "url": "https://www.youtube.com/",
+            "username": "user",
+            "timestamp": 1778410555.7736125,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "youtube.com",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "7ca4deb3",
+            "url": "http://microsoft-support-alert.tk",
+            "username": "user",
+            "timestamp": 1778406514.7449517,
+            "result": "phishing",
+            "probability": 0.9999939375014129,
+            "analysis": {
+                "domain": "microsoft-support-alert.tk",
+                "length": 33,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "0b5b7d64",
+            "url": "https://www.netflix.com",
+            "username": "user",
+            "timestamp": 1778406481.3999634,
+            "result": "phishing",
+            "probability": 0.9904158723474581,
+            "analysis": {
+                "domain": "netflix.com",
+                "length": 23,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "ec06bb6c",
+            "url": "https://www.netfliix.com",
+            "username": "user",
+            "timestamp": 1778406459.8060663,
+            "result": "phishing",
+            "probability": 0.9932943629627656,
+            "analysis": {
+                "domain": "netfliix.com",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "454da403",
+            "url": "https://www.kaggle.com",
+            "username": "user",
+            "timestamp": 1778406428.905427,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "kaggle.com",
+                "length": 22,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "fee7c724",
+            "url": "https://www.coursera.org/courseraplus?utm_medium=sem&utm_source=gg&utm_campaign=b2c_india_x_coursera_ftcof_courseraplus_cx_dr_bau_gg_sem_bd-ex_in_all_m_hyb_24-05_x&campaignid=21327429274&adgroupid=162815312357&device=c&keyword=coursera&matchtype=e&network=g&devicemodel=&creativeid=700607287640&assetgroupid=&targetid=aud-2479827814927:kwd-36262515261&extensionid=&placement=&gad_source=1&gad_campaignid=21327429274&gbraid=0AAAAADdKX6bdykwTzeOJMLA4QOcW2-KHV&gclid=Cj0KCQjw2YDQBhD_ARIsAE1qeSc8MXTZ9t7Dzhs8QljcIdzhD86y78ME8nBY83sl_u0BlLY7V8CxBd8aAj8uEALw_wcB",
+            "username": "user",
+            "timestamp": 1778406388.385939,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "coursera.org",
+                "length": 556,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "7ad4a75d",
+            "url": "https://chatgpt.com",
+            "username": "user",
+            "timestamp": 1778406366.7863362,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "chatgpt.com",
+                "https": true,
+                "is_ip": false,
+                "length": 19,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "34037a6f",
+            "url": "https://www.wikipedia.org",
+            "username": "user",
+            "timestamp": 1778406338.314709,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "wikipedia.org",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "6cbb170f",
+            "url": "https://www.coursera.org/",
+            "username": "user",
+            "timestamp": 1778406300.8963597,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "coursera.org",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "2ad7c61f",
+            "url": "https://web.whatsapp.com",
+            "username": "user",
+            "timestamp": 1778406241.7513134,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "https": true,
+                "is_ip": false,
+                "length": 24,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "a8eeec9f",
+            "url": "https://www.coursera.org",
+            "username": "user",
+            "timestamp": 1778406199.0273862,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "coursera.org",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "f229e176",
+            "url": "https://www.coursera.org",
+            "username": "user",
+            "timestamp": 1778406040.262603,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "coursera.org",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "6914a0e7",
+            "url": "https://www.coursera.org",
+            "username": "user",
+            "timestamp": 1778405541.419284,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "coursera.org",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "b5285440",
+            "url": "https://web.whatsapp.com",
+            "username": "user",
+            "timestamp": 1778302586.08493,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "https": true,
+                "is_ip": false,
+                "length": 24,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "8378b321",
+            "url": "https://web.whatsapp.com/",
+            "username": "user",
+            "timestamp": 1778302580.869521,
+            "result": "phishing",
+            "probability": 0.9999784157624163,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "829cc7c6",
+            "url": "https://web.whatsapp.com",
+            "username": "admin",
+            "timestamp": 1778302314.6003246,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "https": true,
+                "is_ip": false,
+                "length": 24,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "c4e8b561",
+            "url": "https://web.whatsapp.com",
+            "username": "admin",
+            "timestamp": 1778302284.623342,
+            "result": "phishing",
+            "probability": 0.993431326719033,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "362c8d8f",
+            "url": "https://chatgpt.com/",
+            "username": "user",
+            "timestamp": 1778302213.2123456,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "chatgpt.com",
+                "https": true,
+                "is_ip": false,
+                "length": 20,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "69a602a9",
+            "url": "https://chatgpt.com",
+            "username": "user",
+            "timestamp": 1778302202.390333,
+            "result": "phishing",
+            "probability": 0.9721287243039403,
+            "analysis": {
+                "domain": "chatgpt.com",
+                "length": 19,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "e14dacee",
+            "url": "https://chatgpt.com/",
+            "username": "user",
+            "timestamp": 1778301514.8402014,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "chatgpt.com",
+                "https": true,
+                "is_ip": false,
+                "length": 20,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "83d0a7df",
+            "url": "https://chatgpt.com/",
+            "username": "user",
+            "timestamp": 1778301295.9998224,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "chatgpt.com",
+                "https": true,
+                "is_ip": false,
+                "length": 20,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "461c39e0",
+            "url": "https://web.whatsapp.com/",
+            "username": "admin",
+            "timestamp": 1778267275.883716,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "https": true,
+                "is_ip": false,
+                "length": 25,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "db9a8985",
+            "url": "https://chatgpt.com/",
+            "username": "admin",
+            "timestamp": 1778267244.2159364,
+            "result": "legitimate",
+            "reason": "Legitimate URL (Admin Whitelist)",
+            "probability": 1.0,
+            "analysis": {
+                "domain": "chatgpt.com",
+                "https": true,
+                "is_ip": false,
+                "length": 20,
+                "suspicious_keywords": []
+            }
+        },
+        {
+            "id": "f169344e",
+            "url": "https://web.whatsapp.com/",
+            "username": "admin",
+            "timestamp": 1778263111.248878,
+            "result": "phishing",
+            "probability": 0.9999784157624163,
+            "analysis": {
+                "domain": "web.whatsapp.com",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "31e0c04e",
+            "url": "http://microsoft.com",
+            "username": "admin",
+            "timestamp": 1778261814.0565975,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "microsoft.com",
+                "length": 20,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "ad163b29",
+            "url": "http://microsoft-support-alert.tk",
+            "username": "admin",
+            "timestamp": 1778261784.1989715,
+            "result": "phishing",
+            "probability": 0.9999939375014129,
+            "analysis": {
+                "domain": "microsoft-support-alert.tk",
+                "length": 33,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "28a5f45f",
+            "url": "https://www.linkedin.com",
+            "username": "user",
+            "timestamp": 1778259361.120466,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "linkedin.com",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "1c98f753",
+            "url": "\"https://www.wikipedia.org",
+            "username": "user",
+            "timestamp": 1778259316.215758,
+            "result": "legitimate",
+            "probability": 0.5035400988601104,
+            "analysis": {
+                "domain": "",
+                "length": 26,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "282c6c91",
+            "url": "http://microsoft-support-alert.tk",
+            "username": "user",
+            "timestamp": 1778259297.845368,
+            "result": "phishing",
+            "probability": 0.9999939375014129,
+            "analysis": {
+                "domain": "microsoft-support-alert.tk",
+                "length": 33,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "e8eeb8b5",
+            "url": "http://verify-instagram-account.ml",
+            "username": "user",
+            "timestamp": 1778259277.4868598,
+            "result": "phishing",
+            "probability": 0.9999971015872533,
+            "analysis": {
+                "domain": "verify-instagram-account.ml",
+                "length": 34,
+                "https": false,
+                "suspicious_keywords": [
+                    "verify",
+                    "account"
+                ],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "cadf38e1",
+            "url": "https://www.msn.com/",
+            "username": "guest",
+            "timestamp": 1778177519.7080958,
+            "result": "phishing",
+            "probability": 0.9998636039440723,
+            "analysis": {
+                "domain": "msn.com",
+                "length": 20,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "2d4818bf",
+            "url": "https://chatgpt.com",
+            "username": "guest",
+            "timestamp": 1778177480.294903,
+            "result": "phishing",
+            "probability": 0.9721287243039403,
+            "analysis": {
+                "domain": "chatgpt.com",
+                "length": 19,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "39eee677",
+            "url": "https://www.netfliix.com",
+            "username": "user",
+            "timestamp": 1778177117.40124,
+            "result": "phishing",
+            "probability": 0.9932943629627656,
+            "analysis": {
+                "domain": "netfliix.com",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "f626b477",
+            "url": "https://www.netflix.com",
+            "username": "user",
+            "timestamp": 1778177107.6956608,
+            "result": "phishing",
+            "probability": 0.9904158723474581,
+            "analysis": {
+                "domain": "netflix.com",
+                "length": 23,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "f3971725",
+            "url": "http://chatgpt.com",
+            "username": "user",
+            "timestamp": 1778177090.5227447,
+            "result": "phishing",
+            "probability": 0.9876580961774879,
+            "analysis": {
+                "domain": "chatgpt.com",
+                "length": 18,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "22695471",
+            "url": "http://facebook.com",
+            "username": "user",
+            "timestamp": 1778177074.042883,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "facebook.com",
+                "length": 19,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "b33ef58f",
+            "url": "http://facebook-password-reset.xyz",
+            "username": "user",
+            "timestamp": 1778177065.0114386,
+            "result": "phishing",
+            "probability": 0.9999957707011591,
+            "analysis": {
+                "domain": "facebook-password-reset.xyz",
+                "length": 34,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "4c57aedb",
+            "url": "http://appleid-login-confirm.info",
+            "username": "user",
+            "timestamp": 1778177045.1930456,
+            "result": "phishing",
+            "probability": 0.9999952916563174,
+            "analysis": {
+                "domain": "appleid-login-confirm.info",
+                "length": 33,
+                "https": false,
+                "suspicious_keywords": [
+                    "login"
+                ],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "faba2e38",
+            "url": "https://www.kaggle.com",
+            "username": "user",
+            "timestamp": 1778176974.6551273,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "kaggle.com",
+                "length": 22,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "d2b26805",
+            "url": "https://ocw.mit.edu",
+            "username": "user",
+            "timestamp": 1778176957.2071764,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "ocw.mit.edu",
+                "length": 19,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "17d6eecd",
+            "url": "https://chatgpt.com",
+            "username": "user",
+            "timestamp": 1778176938.1867492,
+            "result": "phishing",
+            "probability": 0.9721287243039403,
+            "analysis": {
+                "domain": "chatgpt.com",
+                "length": 19,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "17f65d19",
+            "url": "https://chatgpt.com/",
+            "username": "user",
+            "timestamp": 1778176919.3886523,
+            "result": "phishing",
+            "probability": 0.9999074900905704,
+            "analysis": {
+                "domain": "chatgpt.com",
+                "length": 20,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "c4aebf6a",
+            "url": "http://paypal-login.xyz",
+            "username": "user",
+            "timestamp": 1778176903.127076,
+            "result": "phishing",
+            "probability": 0.9995696011150417,
+            "analysis": {
+                "domain": "paypal-login.xyz",
+                "length": 23,
+                "https": false,
+                "suspicious_keywords": [
+                    "login"
+                ],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "aae653d9",
+            "url": "http://bit.ly/login",
+            "username": "user",
+            "timestamp": 1778176877.7693167,
+            "result": "phishing",
+            "reason": "shortened url",
+            "analysis": {
+                "domain": "bit.ly",
+                "length": 19,
+                "https": false,
+                "suspicious_keywords": [
+                    "login"
+                ],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "56332849",
+            "url": "http://192.168.1.1/login",
+            "username": "user",
+            "timestamp": 1778176853.466216,
+            "result": "phishing",
+            "probability": 0.9999748626532741,
+            "analysis": {
+                "domain": "192.168.1.1",
+                "length": 24,
+                "https": false,
+                "suspicious_keywords": [
+                    "login"
+                ],
+                "is_ip": true
+            }
+        },
+        {
+            "id": "1b267b9f",
+            "url": "https://www.coursera.org",
+            "username": "user",
+            "timestamp": 1778176715.7219791,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "coursera.org",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "da363ea0",
+            "url": "https://www.iciciibank.com",
+            "username": "user4",
+            "timestamp": 1778092484.32414,
+            "result": "phishing",
+            "reason": "typo detected",
+            "analysis": {
+                "domain": "iciciibank.com",
+                "length": 26,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "f35402fa",
+            "url": "https://www.icicibank.com",
+            "username": "user4",
+            "timestamp": 1778092473.4142587,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "icicibank.com",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "cc979752",
+            "url": "https://www.iciciibank.com",
+            "username": "guest",
+            "timestamp": 1778092407.792743,
+            "result": "phishing",
+            "reason": "typo detected",
+            "analysis": {
+                "domain": "iciciibank.com",
+                "length": 26,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "38774375",
+            "url": "https://www.icicibank.com",
+            "username": "guest",
+            "timestamp": 1778092403.4029675,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "icicibank.com",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "8e7793fa",
+            "url": "http://google.com",
+            "username": "guest",
+            "timestamp": 1778091348.6922407,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "google.com",
+                "length": 17,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "6a93621d",
+            "url": "http://google.com.fake-login.xyz",
+            "username": "guest",
+            "timestamp": 1778091332.8241622,
+            "result": "phishing",
+            "probability": 0.9999439157915926,
+            "analysis": {
+                "domain": "google.com.fake-login.xyz",
+                "length": 32,
+                "https": false,
+                "suspicious_keywords": [
+                    "login"
+                ],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "ad96f778",
+            "url": "http://google.com",
+            "username": "guest",
+            "timestamp": 1778091273.8413522,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "google.com",
+                "length": 17,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "47d2055c",
+            "url": "http://google.com.fake-login.xyz",
+            "username": "guest",
+            "timestamp": 1778091257.7991,
+            "result": "phishing",
+            "probability": 0.9999439157915926,
+            "analysis": {
+                "domain": "google.com.fake-login.xyz",
+                "length": 32,
+                "https": false,
+                "suspicious_keywords": [
+                    "login"
+                ],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "923bebae",
+            "url": "https://www.g0ogle.com",
+            "username": "guest",
+            "timestamp": 1778091241.0971682,
+            "result": "phishing",
+            "probability": 0.9854102485376129,
+            "analysis": {
+                "domain": "g0ogle.com",
+                "length": 22,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "cf5a16ab",
+            "url": "https://www.google.com",
+            "username": "guest",
+            "timestamp": 1778091235.533149,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "google.com",
+                "length": 22,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "1aee8d32",
+            "url": "https://www.hdfCbank.com",
+            "username": "guest",
+            "timestamp": 1778091226.1014497,
+            "result": "phishing",
+            "reason": "typo detected",
+            "analysis": {
+                "domain": "hdfCbank.com",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "00204b4e",
+            "url": "https://www.hdfcbank.com",
+            "username": "guest",
+            "timestamp": 1778091218.1636348,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "hdfcbank.com",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "2b7b7b0e",
+            "url": "https://ocw.mit.edu",
+            "username": "user4",
+            "timestamp": 1777836967.1142206,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "ocw.mit.edu",
+                "length": 19,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "23848a85",
+            "url": "\"https://ocw.mit.edu",
+            "username": "user4",
+            "timestamp": 1777836959.869057,
+            "result": "legitimate",
+            "probability": 0.4841591688949335,
+            "analysis": {
+                "domain": "",
+                "length": 20,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "ba9a2e27",
+            "url": "https://www.india.gov.in",
+            "username": "user4",
+            "timestamp": 1777836942.6121926,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "india.gov.in",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "71d7414b",
+            "url": "http://google.com",
+            "username": "tester123",
+            "timestamp": 1777836661.6083899,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "google.com",
+                "length": 17,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "7c8ee8ef",
+            "url": "http://example.com",
+            "username": "tester123",
+            "timestamp": 1777836574.954219,
+            "result": "phishing",
+            "probability": 0.9809289345287074,
+            "analysis": {
+                "domain": "example.com",
+                "length": 18,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "4c038827",
+            "url": "http://example.com",
+            "username": "tester123",
+            "timestamp": 1777836370.4684563,
+            "result": "phishing",
+            "probability": 0.9809289345287074,
+            "analysis": {
+                "domain": "example.com",
+                "length": 18,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "745a797b",
+            "url": "http://google.com.fake-login.xyz",
+            "username": "user4",
+            "timestamp": 1777835799.8375568,
+            "result": "phishing",
+            "probability": 0.9999439157915926,
+            "analysis": {
+                "domain": "google.com.fake-login.xyz",
+                "length": 32,
+                "https": false,
+                "suspicious_keywords": [
+                    "login"
+                ],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "91227c1b",
+            "url": "https://ocw.mit.edu",
+            "username": "user4",
+            "timestamp": 1777835787.3489592,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "ocw.mit.edu",
+                "length": 19,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "557fb129",
+            "url": "https://www.kaggle.com",
+            "username": "user4",
+            "timestamp": 1777835767.4195924,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "kaggle.com",
+                "length": 22,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "3c1ce2fa",
+            "url": "https://www.kaggle.com",
+            "username": "user4",
+            "timestamp": 1777835765.5934045,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "kaggle.com",
+                "length": 22,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "d94a4445",
+            "url": "https://stackoverflow.com",
+            "username": "user4",
+            "timestamp": 1777835753.3050828,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "stackoverflow.com",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "3d3987b5",
+            "url": "https://www.coursera.org",
+            "username": "user",
+            "timestamp": 1777832003.2653098,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "coursera.org",
+                "length": 24,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "dd029f74",
+            "url": "https://www.go0gle.com",
+            "username": "user",
+            "timestamp": 1777831980.7782423,
+            "result": "phishing",
+            "probability": 0.9853614502184684,
+            "analysis": {
+                "domain": "go0gle.com",
+                "length": 22,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "a7b5ae50",
+            "url": "https://www.google.com",
+            "username": "newuser",
+            "timestamp": 1777831684.3657117,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "google.com",
+                "length": 22,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "cc8adf1b",
+            "url": "http://g00gle.com",
+            "username": "user1",
+            "timestamp": 1777830698.8361897,
+            "result": "phishing",
+            "probability": 0.9779094608086166,
+            "analysis": {
+                "domain": "g00gle.com",
+                "length": 17,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "e3bf5586",
+            "url": "https://www.iciccbank.com",
+            "username": "user",
+            "timestamp": 1777828497.2285695,
+            "result": "phishing",
+            "reason": "typo detected",
+            "analysis": {
+                "domain": "iciccbank.com",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "07c641c8",
+            "url": "https://www.iciccibank.com",
+            "username": "user",
+            "timestamp": 1777828488.5443425,
+            "result": "phishing",
+            "reason": "typo detected",
+            "analysis": {
+                "domain": "iciccibank.com",
+                "length": 26,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "9a14cc65",
+            "url": "https://www.icicibank.com",
+            "username": "user",
+            "timestamp": 1777828483.079506,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "icicibank.com",
+                "length": 25,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "350b1816",
+            "url": "http://g00gle.com",
+            "username": "user",
+            "timestamp": 1777827504.1290364,
+            "result": "phishing",
+            "probability": 0.9779094608086166,
+            "analysis": {
+                "domain": "g00gle.com",
+                "length": 17,
+                "https": false,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "65cd672e",
+            "url": "http://192.168.1.1/login",
+            "username": "user",
+            "timestamp": 1777827477.6657817,
+            "result": "phishing",
+            "probability": 0.9999748626532741,
+            "analysis": {
+                "domain": "192.168.1.1",
+                "length": 24,
+                "https": false,
+                "suspicious_keywords": [
+                    "login"
+                ],
+                "is_ip": true
+            }
+        },
+        {
+            "id": "a593f025",
+            "url": "http://google.com.fake-login.xyz",
+            "username": "user",
+            "timestamp": 1777827455.032583,
+            "result": "phishing",
+            "probability": 0.9999439157915926,
+            "analysis": {
+                "domain": "google.com.fake-login.xyz",
+                "length": 32,
+                "https": false,
+                "suspicious_keywords": [
+                    "login"
+                ],
+                "is_ip": false
+            }
+        },
+        {
+            "id": "0fa3e898",
+            "url": "https://nptel.ac.in",
+            "username": "user",
+            "timestamp": 1777827437.0032852,
+            "result": "legitimate",
+            "reason": "trusted domain",
+            "analysis": {
+                "domain": "nptel.ac.in",
+                "length": 19,
+                "https": true,
+                "suspicious_keywords": [],
+                "is_ip": false
+            }
+        }
+    ],
+    "bookmarks": {
+        "newuser": [
+            {
+                "analysis": {
+                    "domain": "google.com",
+                    "https": true,
+                    "is_ip": false,
+                    "length": 22,
+                    "suspicious_keywords": []
+                },
+                "id": "a7b5ae50",
+                "reason": "trusted domain",
+                "result": "legitimate",
+                "timestamp": 1777831684.3657117,
+                "url": "https://www.google.com",
+                "username": "newuser"
+            }
+        ]
+    }
+}

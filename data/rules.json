@@ -1,0 +1,19 @@
+{
+    "blacklist": [],
+    "whitelist": [
+        {
+            "id": "2fd9c17e",
+            "url": "https://web.whatsapp.com/",
+            "timestamp": 1778412458.832492,
+            "added_by": "admin",
+            "rule_type": "whitelist"
+        },
+        {
+            "id": "d278adfd",
+            "url": "https://chatgpt.com",
+            "timestamp": 1778302251.570934,
+            "added_by": "admin",
+            "rule_type": "whitelist"
+        }
+    ]
+}
