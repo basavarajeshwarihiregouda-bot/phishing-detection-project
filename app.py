@@ -11,7 +11,7 @@ from model.predict import predict_url_api
 from urllib.parse import urlparse
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)
+CORS(app)
 # =========================
 # PERSISTENCE
 # =========================
