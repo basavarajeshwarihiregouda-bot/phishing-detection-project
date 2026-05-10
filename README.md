@@ -225,7 +225,7 @@ python app.py
 Server starts at:
 
 ```bash
-http://127.0.0.1:5000
+https://phishing-detection-project-kld5.onrender.com
 ```
 
 ---

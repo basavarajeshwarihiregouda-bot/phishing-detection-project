@@ -1,4 +1,4 @@
-const BACKEND_API = "http://127.0.0.1:5000/predict";
+const BACKEND_API = "/predict";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const urlDisplay = document.getElementById("current-url");

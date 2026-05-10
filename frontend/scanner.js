@@ -1,5 +1,5 @@
 // ===== SCANNER MODULE =====
-const BASE_URL = 'http://127.0.0.1:5000';
+const BASE_URL = '';
 
 export async function scanUrl(url, username) {
     const response = await fetch(`${BASE_URL}/predict`, {

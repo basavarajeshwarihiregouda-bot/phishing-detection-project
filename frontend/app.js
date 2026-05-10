@@ -6,7 +6,7 @@ import {
 } from './scanner.js?v=4';
 import { createLineChart, createBarChart, createDoughnutChart, createFeatureChart } from './chart.js?v=3';
 
-const BACKEND_API = 'http://127.0.0.1:5000';
+const BACKEND_API = '';
 
 // ===== DOM REFS =====
 const pages = {
