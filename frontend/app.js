@@ -6,7 +6,7 @@ import {
 } from './scanner.js?v=4';
 import { createLineChart, createBarChart, createDoughnutChart, createFeatureChart } from './chart.js?v=3';
 
-const BACKEND_API = 'https://phishing-detection-project-kld5.onrender.com';
+const BACKEND_API = 'https://phishing-detection-project-1-ysuh.onrender.com';
 
 // ===== DOM REFS =====
 const pages = {
