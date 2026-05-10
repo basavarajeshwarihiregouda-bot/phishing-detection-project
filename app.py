@@ -5,11 +5,13 @@ import time
 import subprocess
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+
+
 from model.predict import predict_url_api
 from urllib.parse import urlparse
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # =========================
 # PERSISTENCE
