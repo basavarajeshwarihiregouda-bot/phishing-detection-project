@@ -1,4 +1,4 @@
-const BACKEND_API = "/predict";
+const BACKEND_API = "https://phishing-detection-project-1-ysuh.onrender.com/predict";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const urlDisplay = document.getElementById("current-url");
