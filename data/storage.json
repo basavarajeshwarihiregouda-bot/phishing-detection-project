@@ -66,14 +66,14 @@
         "phishing": 50,
         "legitimate": 50,
         "users": [
-            "extension_user",
-            "newuser",
-            "user4",
-            "guest",
             "user",
             "admin",
+            "extension_user",
+            "newuser",
+            "tester123",
             "user1",
-            "tester123"
+            "guest",
+            "user4"
         ]
     },
     "history": [

@@ -111,7 +111,7 @@ def check_rules(url):
 
 @app.route("/")
 def home():
-    return "Phishing Detector API Running"
+    return "Backend Live v2"
 
 @app.route("/login", methods=["POST"])
 def login():
